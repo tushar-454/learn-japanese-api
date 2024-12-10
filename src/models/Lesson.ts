@@ -1,6 +1,6 @@
 import { Document, model, Schema } from 'mongoose';
 
-interface ILesson extends Document {
+export interface ILesson extends Document {
   lesson_name: string;
   lesson_number: number;
   vocabulary: number;
