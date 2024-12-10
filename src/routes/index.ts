@@ -1,9 +1,7 @@
-import express, { Request, Response } from 'express';
+import { Router } from 'express';
+import authRoutes from './auth';
+const router = Router();
 
-const router = express.Router();
-
-router.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!');
-});
+router.use('/api/v1/auth', authRoutes);
 
 export default router;

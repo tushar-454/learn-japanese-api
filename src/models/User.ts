@@ -1,11 +1,14 @@
 import { Document, model, Schema } from 'mongoose';
 
-interface IUser extends Document {
+export interface IUser extends Document {
+  _id: Schema.Types.ObjectId;
   name: string;
   email: string;
   password: string;
   role: 'user' | 'admin';
   photo: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 const userSchema = new Schema<IUser>(
@@ -31,7 +34,6 @@ const userSchema = new Schema<IUser>(
     photo: {
       type: String,
       required: true,
-      default: 'https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg',
     },
   },
   { timestamps: true }
