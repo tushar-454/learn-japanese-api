@@ -1,12 +1,14 @@
 import { Document, model, Schema } from 'mongoose';
 
-interface IVocabulary extends Document {
+export interface IVocabulary extends Document {
   word: string;
   pronunciation: string;
   meaning: string;
   when_to_say: string;
   lesson_no: number;
   created_by: Schema.Types.ObjectId;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 const vocabularySchema = new Schema<IVocabulary>(
