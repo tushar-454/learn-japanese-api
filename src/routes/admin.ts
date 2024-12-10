@@ -1,8 +1,9 @@
 import { Router } from 'express';
-import { createLesson, createVocabulary, deleteLessonById, deleteUserById, deleteVocabularyById, getAllUsers, getVocabulary, updateLessonById, updateUserById, updateVocabularyById } from '../controllers/admin';
+import { createLesson, createTutorial, createVocabulary, deleteLessonById, deleteTutorialById, deleteUserById, deleteVocabularyById, getAllUsers, getVocabulary, updateLessonById, updateTutorialById, updateUserById, updateVocabularyById } from '../controllers/admin';
 import { getAllLessons } from '../controllers/lesson';
 import { updateUserByIdValidation } from '../validation/admin';
 import { createLessonValidation, updateLessonValidation } from '../validation/lesson';
+import { createTutorialValidation, updateTutorialValidation } from '../validation/tutorial';
 import { createVocabularyValidation, updateVocabularyValidation } from '../validation/vocabulary';
 const router = Router();
 
@@ -19,5 +20,9 @@ router.get('/vocabulary', getVocabulary);
 router.post('/vocabulary', createVocabularyValidation, createVocabulary);
 router.put('/vocabulary/:vocabularyId', updateVocabularyValidation, updateVocabularyById);
 router.delete('/vocabulary/:vocabularyId', deleteVocabularyById);
+
+router.post('/tutorials', createTutorialValidation, createTutorial);
+router.put('/tutorials/:tutorialId', updateTutorialValidation, updateTutorialById);
+router.delete('/tutorials/:tutorialId', deleteTutorialById);
 
 export default router;

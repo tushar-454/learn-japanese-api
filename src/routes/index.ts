@@ -4,6 +4,7 @@ import validateToken from '../middlewares/validateToken';
 import adminRoutes from './admin';
 import authRoutes from './auth';
 import lessonRoutes from './lesson';
+import tutorialsRoutes from './tutorial';
 import userRoutes from './user';
 import vocabularyRoutes from './vocabulary';
 
@@ -14,5 +15,6 @@ router.use('/api/v1/users', validateToken, userRoutes);
 router.use('/api/v1/admin', validateToken, validateAdmin, adminRoutes);
 router.use('/api/v1/lessons', validateToken, lessonRoutes);
 router.use('/api/v1/vocabulary', validateToken, vocabularyRoutes);
+router.use('/api/v1/tutorials', validateToken, tutorialsRoutes);
 
 export default router;
