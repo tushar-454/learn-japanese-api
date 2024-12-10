@@ -1,3 +1,4 @@
 import createUserValidation from './createUser';
+import loginUserValidation from './loginUser';
 
-export { createUserValidation };
+export { createUserValidation, loginUserValidation };
