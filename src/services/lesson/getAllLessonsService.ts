@@ -2,7 +2,12 @@ import Lesson from '../../models/Lesson';
 
 const getAllLessonsService = async () => {
   try {
-    const lessons = await Lesson.find().sort({ lesson_number: 1 });
+    const lessons = await Lesson.find()
+      .populate({
+        path: 'created_by',
+        select: 'name email photo',
+      })
+      .sort({ lesson_number: 1 });
     return lessons;
   } catch (error) {
     if (error instanceof Error) {

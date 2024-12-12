@@ -25,7 +25,7 @@ const lessonSchema = new Schema<ILesson>(
     },
     created_by: {
       type: Schema.Types.ObjectId,
-      rel: 'User',
+      ref: 'User',
       required: true,
     },
   },
