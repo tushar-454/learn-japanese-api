@@ -54,6 +54,7 @@ const loginUser = async (req: Request, res: Response, next: NextFunction): Promi
           _id: isUserExist._id,
           email: isUserExist.email,
           name: isUserExist.name,
+          photo: isUserExist.photo,
           role: isUserExist.role,
         },
       });

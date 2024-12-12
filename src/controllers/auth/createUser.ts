@@ -8,7 +8,7 @@ const createUser = async (req: Request, res: Response, next: NextFunction): Prom
 
   try {
     const isUserExists = await findUserByProperty('email', email);
-    console.log(isUserExists);
+
     if (isUserExists) {
       res.status(400).json({
         status: 400,
